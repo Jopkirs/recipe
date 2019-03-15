@@ -10,7 +10,7 @@ public class UnitOfMeasure {
     private Long id;
 
     @OneToOne
-    private String uof;
+    private String description;
 
     public Long getId() {
         return id;
@@ -21,10 +21,10 @@ public class UnitOfMeasure {
     }
 
     public String getUof() {
-        return uof;
+        return description;
     }
 
     public void setUof(String uof) {
-        this.uof = uof;
+        this.description = uof;
     }
 }
