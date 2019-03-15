@@ -1,10 +1,8 @@
 package com.kaigo.recipe.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 public class UnitOfMeasure {
 
     @Id
