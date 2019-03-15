@@ -1,17 +1,18 @@
 package com.kaigo.recipe.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-public class UnitOfMeasure {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
 
-    @OneToOne
-    private Recipe recipe;
+    @ManyToMany(mappedBy = "categories")
+    private Set<Recipe> recipes;
 
     public Long getId() {
         return id;
@@ -29,11 +30,11 @@ public class UnitOfMeasure {
         this.description = description;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
+    public Set<Recipe> getRecipes() {
+        return recipes;
     }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
+    public void setRecipes(Set<Recipe> recipes) {
+        this.recipes = recipes;
     }
 }
